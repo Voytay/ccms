@@ -1,3 +1,5 @@
+package com.codecool.ccms.model;
+
 public enum Status {
     STAT_0(0),
     STAT_1(1),
