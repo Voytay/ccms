@@ -9,11 +9,13 @@ public class ManagerController {
     private List<User> studentsList;
 
     private Manager manager;
+    private ManagerView view;
 
     public ManagerController(Manager manager) {
         this.manager = manager;
-        this.mentorsList = new ArrayList();
-        this.studentsList = new studentsList();
+        this.view = new ManagerController();
+        this.mentorsList = new ArrayList<>();
+        this.studentsList = new ArrayList<>();
     }
 
     public setMentorsList(List<User> mentorsList) {
@@ -31,6 +33,11 @@ public class ManagerController {
             }
         }
         return null;
+    }
+
+    private void addMentor() {
+        this.view.getMentorData();
+        this.mentorsList.add(new Mentor(view.getInput1(); view.getInput2()));
     }
 
 }
