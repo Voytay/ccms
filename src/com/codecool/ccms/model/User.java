@@ -1,6 +1,6 @@
 package com.codecool.ccms.model;
 
-abstract class User {
+public abstract class User {
 
     protected String name;
     protected String email;
