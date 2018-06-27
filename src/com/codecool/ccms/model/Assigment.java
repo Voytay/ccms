@@ -1,4 +1,4 @@
-package com.codecool.ccsm.models;
+package com.codecool.ccms.models;
 
 public class Assigment{
     private String URLadress;

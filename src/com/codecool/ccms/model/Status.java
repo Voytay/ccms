@@ -1,4 +1,4 @@
-package com.codecool.ccsm.models;
+package com.codecool.ccms.models;
 
 public enum Status {
     STAT_0(0),
