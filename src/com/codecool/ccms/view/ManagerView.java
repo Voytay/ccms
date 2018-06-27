@@ -35,20 +35,6 @@ public class ManagerView extends View {
         return this.input3;
     }
 
-    public void printMessage(String message) {
-        System.out.println(message);
-    }
-
-    public void printNoResult() {
-        System.out.println("No matching results found.");
-    }
-
-    public void printUserData(User user) {
-        System.out.println("Name: " + user.getName());
-        System.out.println("Email: " + user.getEmail());
-        System.out.println("\n");
-    }
-
     public void getData(String message) {
         clearInput();
         printMessage(message);
