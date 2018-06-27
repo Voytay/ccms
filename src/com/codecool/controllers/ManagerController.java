@@ -37,7 +37,41 @@ public class ManagerController {
 
     private void addMentor() {
         this.view.getMentorData();
-        this.mentorsList.add(new Mentor(view.getInput1(); view.getInput2()));
+        this.mentorsList.add(new Mentor(view.getInput1(); view.getInput2())); // or reloading database !!!
+        // add new mentor to database with PASSWORD = view.getInput3()
     }
 
+    private void removeMentor() {
+        this.view.getData("Insert mentor's email:");
+        // remove mentor from database, reload
+    }
+
+    private void eidtMentorsData() {
+        this.view.getData("Insert mentors email:");
+        Mentor mentor = findMentor(view.getInput1);
+        if (mentor.equals(null)) {
+            this.view.printNoResult();
+        } else {
+            chooseData(mentor);
+        }
+    }
+
+    private void chooseData(Mentor mentor) {
+        this.view.printMenu();
+        this.view.getData("What do you want to change?");
+        changeData(mentor);
+    }
+
+    private void changeData(Mentor mentor) {
+        switch (view.getInput1()) {
+                case "1":
+                    this.view.getData("Insert new name:");
+                    mentor.setName(view.getInput1);
+                    break;
+                case "2":
+                    this.view.getData("Insert new email:");
+                    mentor.setEmail(view.getInput1);
+                    break;
+        }  
+    }          
 }
