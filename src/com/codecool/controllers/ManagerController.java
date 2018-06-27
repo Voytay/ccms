@@ -52,11 +52,11 @@ public class ManagerController {
         if (mentor.equals(null)) {
             this.view.printNoResult();
         } else {
-            chooseData(mentor);
+            chooseDataToChange(mentor);
         }
     }
 
-    private void chooseData(Mentor mentor) {
+    private void chooseDataToChange(Mentor mentor) {
         this.view.printMenu();
         this.view.getData("What do you want to change?");
         changeData(mentor);
