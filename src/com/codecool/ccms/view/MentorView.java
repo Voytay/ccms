@@ -5,11 +5,15 @@ import java.util.*;
 
 public class MentorView extends View {
 
-    private String input1;
-    private String input2;
-    private String input3;
-
     public MentorView() {
         super();
+    }
+
+    public void getAssigmentData() {
+        clearInput();
+        System.out.println("Insert assigment's title:");
+        this.input1 = read.nextLine();
+        System.out.println("Insert assigment's URL:");
+        this.input2 = read.nextLine();
     }
 }

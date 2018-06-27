@@ -5,10 +5,6 @@ import java.util.*;
 
 public class ManagerView extends View {
 
-    private String input1;
-    private String input2;
-    private String input3;
-
     public ManagerView() {
         super();
     }
@@ -23,28 +19,6 @@ public class ManagerView extends View {
         this.input3 = read.nextLine();
     }
 
-    public String getInput1() {
-        return this.input1;
-    }
-
-    public String getInput2() {
-        return this.input2;
-    }
-
-    public String getInput3() {
-        return this.input3;
-    }
-
-    public void getData(String message) {
-        clearInput();
-        printMessage(message);
-        this.input1 = read.nextLine();
-    }
-
-    private void clearInput() {
-        this.input1 = "";
-        this.input2 = "";
-        this.input3 = "";
-    }
+    
 
 }

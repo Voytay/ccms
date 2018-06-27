@@ -20,4 +20,9 @@ public class MentorController {
         this.assigmentsFromStudents = new ArrayList<>();
     }
 
+    private void addAssigment() {
+        this.view.getAssigmentData();
+        this.templateAssigments.add(new Assigment(view.getInput1(), view.getInput2()));
+    }
+
 }
