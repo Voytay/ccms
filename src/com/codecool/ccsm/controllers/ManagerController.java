@@ -3,6 +3,8 @@ package com.codecool.ccsm.controllers;
 import com.codecool.ccsm.models.*;
 import com.codecool.ccsm.views.*;
 
+import java.util.*;
+
 public class ManagerController {
 
     private List<User> mentorsList;
@@ -13,22 +15,22 @@ public class ManagerController {
 
     public ManagerController(Manager manager) {
         this.manager = manager;
-        this.view = new ManagerController();
+        this.view = new ManagerView();
         this.mentorsList = new ArrayList<>();
         this.studentsList = new ArrayList<>();
     }
 
-    public setMentorsList(List<User> mentorsList) {
+    public void setMentorsList(List<User> mentorsList) {
         this.mentorsList = mentorsList;
     }
 
-    public setStudentsList(List<User> studentsList) {
+    public void setStudentsList(List<User> studentsList) {
         this.studentsList = studentsList;
     }
 
-    private Mentor findMentor(String email) {
+    private User findMentor(String email) {
         for (User mentor: this.mentorsList) {
-            if (mentor.getEmail().equals(email)) {
+            if ( mentor.getEmail().equals(email)) {
                 return mentor;
             }
         }
@@ -37,7 +39,7 @@ public class ManagerController {
 
     private void addMentor() {
         this.view.getMentorData();
-        this.mentorsList.add(new Mentor(view.getInput1(); view.getInput2())); // or reloading database !!!
+        this.mentorsList.add(new Mentor(view.getInput1(), view.getInput2())); // or reloading database !!!
         // add new mentor to database with PASSWORD = view.getInput3()
     }
 
@@ -48,7 +50,7 @@ public class ManagerController {
 
     private void eidtMentorsData() {
         this.view.getData("Insert mentors email:");
-        Mentor mentor = findMentor(view.getInput1);
+        Mentor mentor = (Mentor) findMentor(view.getInput1());
         if (mentor.equals(null)) {
             this.view.printNoResult();
         } else {
@@ -57,7 +59,7 @@ public class ManagerController {
     }
 
     private void chooseDataToChange(Mentor mentor) {
-        this.view.printMenu();
+        //this.view.printMenu();                   implement method !!!
         this.view.getData("What do you want to change?");
         changeData(mentor);
     }
@@ -66,21 +68,21 @@ public class ManagerController {
         switch (view.getInput1()) {
                 case "1":
                     this.view.getData("Insert new name:");
-                    mentor.setName(view.getInput1);
+                    mentor.setName(view.getInput1());
                     break;
                 case "2":
                     this.view.getData("Insert new email:");
-                    mentor.setEmail(view.getInput1);
+                    mentor.setEmail(view.getInput1());
                     break;
         }  
     } 
 
     private void seeMentorsList() {
-        if this.mentorsList.isEmpty() {
+        if (this.mentorsList.isEmpty()) {
             this.view.printMessage("The list is empty.");
         } else {
             this.view.printMessage("List of mentors: \n");
-            for (Mentor mentor: this.mentorsList) {
+            for (User mentor: this.mentorsList) {
                 this.view.printUserData(mentor);
             }
         }

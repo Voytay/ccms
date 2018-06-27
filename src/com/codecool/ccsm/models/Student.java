@@ -1,9 +1,11 @@
+package com.codecool.ccsm.models;
+
 public class Student extends User {
 
     private boolean activated;
 
-    public Student(String name; String email; boolean activated) {
-        super(name; email; Status.STAT_0);
+    public Student(String name, String email, boolean activated) {
+        super(name, email, Status.STAT_0);
         this.activated = activated;
     }
 

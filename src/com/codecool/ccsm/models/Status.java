@@ -1,3 +1,5 @@
+package com.codecool.ccsm.models;
+
 public enum Status {
     STAT_0(0),
     STAT_1(1),
@@ -6,7 +8,7 @@ public enum Status {
     
     private int status;
 
-    Rank(int status){
+    Status(int status){
         this.status = status;
     }
 

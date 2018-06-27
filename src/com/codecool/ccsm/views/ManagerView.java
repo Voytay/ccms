@@ -1,10 +1,9 @@
-package com.codecool.ccsm.controllers;
+package com.codecool.ccsm.views;
 
 import com.codecool.ccsm.models.*;
-import com.codecool.ccsm.views.*;
 import java.util.*;
 
-public class ManagerView() {
+public class ManagerView {
 
     private Scanner read;
     private String input1;
@@ -15,7 +14,7 @@ public class ManagerView() {
         this.read = new Scanner(System.in);
     }
 
-    public getMentorData() {
+    public void getMentorData() {
         clearInput();
         System.out.println("Insert mentor's name:");
         this.input1 = read.nextLine();
@@ -51,7 +50,7 @@ public class ManagerView() {
         System.out.println("\n");
     }
 
-    public String getData(String message) {
+    public void getData(String message) {
         clearInput();
         printMessage(message);
         this.input1 = read.nextLine();
