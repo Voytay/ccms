@@ -3,15 +3,14 @@ package com.codecool.ccms.views;
 import com.codecool.ccms.models.*;
 import java.util.*;
 
-public class ManagerView {
+public class ManagerView extends View {
 
-    private Scanner read;
     private String input1;
     private String input2;
     private String input3;
 
     public ManagerView() {
-        this.read = new Scanner(System.in);
+        super();
     }
 
     public void getMentorData() {
