@@ -73,5 +73,16 @@ public class ManagerController {
                     mentor.setEmail(view.getInput1);
                     break;
         }  
-    }          
+    } 
+
+    private void seeMentorsList() {
+        if this.mentorsList.isEmpty() {
+            this.view.printMessage("The list is empty.");
+        } else {
+            this.view.printMessage("List of mentors: \n");
+            for (Mentor mentor: this.mentorsList) {
+                this.view.printUserData(mentor);
+            }
+        }
+    }         
 }
