@@ -12,6 +12,7 @@ public class Assigment{
         this.URLadress = URLadress;
         this.studentEmail = null;
         this.submitted = null;
+        this.grade = null;
     }
 
     public String getTitle() {
