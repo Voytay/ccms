@@ -5,28 +5,18 @@ import java.io.*;
 
 public class DataBase {
 
-    private Scanner scanner;
-    private List<String> data;
 
-    public DataBase(String fileName) {
-        this.data = new ArrayList<>();
-        
+    public List<String> readDataFromFile(String fileName) {
+        List<String> data = new ArrayList<>();
         try {
-            readDataFromFile(fileName);
-
+            Scanner scanner = new Scanner(new File(fileName));
+            while (scanner.hasNextLine()) {
+                data.add(scanner.nextLine());
+            }
         } catch (FileNotFoundException e1) {
             System.out.println("No matching file.");
         }
-    }
-
-    private void readDataFromFile(String fileName) throws FileNotFoundException {
-        this.scanner = new Scanner(new File(fileName));
-        while (this.scanner.hasNextLine()) {
-            data.add(scanner.nextLine());
-        }
+        return data;
     } 
 
-    public List<String> getData() {
-        return this.data;
-    }
 }

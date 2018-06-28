@@ -9,9 +9,10 @@ import java.util.*;
 public class DataTest {
 
     public static void main (String[] args) {
-        DataBase base = new DataBase("ccms_data.csv");
-        for (String data: base.getData()) {
-            System.out.println(data);
+        DataBase base = new DataBase();
+        List<String> data = base.readDataFromFile("ccmsdata.csv");
+        for (String dat: data) {
+            System.out.println(dat);
         }
     }
 }
