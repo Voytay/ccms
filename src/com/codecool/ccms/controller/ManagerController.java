@@ -1,7 +1,7 @@
-package com.codecool.ccms.controllers;
+package com.codecool.ccms.controller;
 
-import com.codecool.ccms.models.*;
-import com.codecool.ccms.views.*;
+import com.codecool.ccms.model.*;
+import com.codecool.ccms.view.*;
 
 import java.util.*;
 

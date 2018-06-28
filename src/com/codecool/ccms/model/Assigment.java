@@ -1,4 +1,4 @@
-package com.codecool.ccms.models;
+package com.codecool.ccms.model;
 
 public class Assigment{
     private String title;
@@ -47,6 +47,11 @@ public class Assigment{
         this.submitted = submitted;
     }
 
+    public String getGrade() {
+        return this.grade;
+    }
 
-    
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
 }

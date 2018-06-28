@@ -1,6 +1,6 @@
-package com.codecool.ccms.views;
+package com.codecool.ccms.view;
 
-import com.codecool.ccms.models.*;
+import com.codecool.ccms.model.*;
 import java.util.*;
 
 public class ManagerView extends View {

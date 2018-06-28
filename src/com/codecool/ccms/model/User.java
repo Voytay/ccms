@@ -1,4 +1,4 @@
-package com.codecool.ccms.models;
+package com.codecool.ccms.model;
 
 abstract public class User {
 
