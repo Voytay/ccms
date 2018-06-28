@@ -48,6 +48,6 @@ public class MentorController {
 
     }
 
-    private Student findStudent() {}
+    private void findStudent() {}
 
 }
