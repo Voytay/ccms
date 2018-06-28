@@ -44,4 +44,10 @@ public class MentorController {
         return null;
     }
 
+    private void addStudentToClass() {
+
+    }
+
+    private Student findStudent() {}
+
 }
