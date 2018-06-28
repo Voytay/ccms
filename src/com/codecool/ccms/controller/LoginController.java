@@ -1,5 +1,8 @@
 package com.codecool.ccms.controller;
 
+import com.codecool.ccms.DataBase;
+import com.codecool.ccms.model.Manager;
+import com.codecool.ccms.model.Mentor;
 import com.codecool.ccms.model.Status;
 import com.codecool.ccms.model.Student;
 import com.codecool.ccms.view.LoginView;
@@ -18,36 +21,38 @@ public class LoginController {
     }
 
     public void authUser() {
-        //data manager instance
-        ArrayList<List<String>> usersData = dm.getFileData();
+        DataBase db = new DataBase();
+        int userType = -1;
+        List<String> usersData = db.readDataFromFile("ccmsdata.csv");
         ArrayList<String> data = LOGIN_VIEW.getAuthData();
-        for (List<String> line : usersData) {
-            if (line.get(1).equals(data.get(0)) && line.get(2).equals(data.get(1))) {
-                int userType = Integer.valueOf(line.get(3));
-                switch (userType) {
-                    case 0:
-                        StudentController sc = new StudentController(new Student(line.get(0), line.get(1), ));
-                        sc.run();
-                        break;
-                    case 1:
-                        SecretaryController sc = new SecretaryController();
-                        sc.run();
-                        break;
-                    case 2:
-                        MentorController mc = new MentorController();
-                        mc.run();
-                        break;
-                    case 3:
-                        ManagerController mc = new ManagerController();
-                        mc.run();
-                        break;
-                    default:
-                        System.out.println("User do not exist! \nExiting system");
-                        System.exit(0);
-                }
+        for (String line : usersData) {
+            String[] splitedLine = line.split(",");
+            if (splitedLine[1].equals(data.get(0)) && splitedLine[2].equals(data.get(1))) {
+                userType = Integer.valueOf(splitedLine[3]);
+            }
+            switch (userType) {
+                case 0:
+                    // StudentController sc = new StudentController(new Student(line.get(0), line.get(1)));
+                    //sc.run();
+                    break;
+                case 1:
+                    SecretaryController sc = new SecretaryController();
+                    sc.run();
+                    break;
+                case 2:
+                    MentorController mc = new MentorController(new Mentor("Mentor1", "mentor@codecool"));
+                    mc.run();
+                    break;
+                case 3:
+                    System.out.println("OK");
+                    ManagerController manC = new ManagerController(new Manager("Jurek", "jurek@cms.codecool"));
+                    manC.run();
+                    break;
+                default:
+                    System.out.println("Invalid user or password! \nExiting system");
+                    System.exit(0);
             }
         }
-
     }
 
 
