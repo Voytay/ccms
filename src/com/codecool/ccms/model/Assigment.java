@@ -1,15 +1,26 @@
-package com.codecool.ccms.models;
+package com.codecool.ccms.model;
 
 public class Assigment{
+    private String title;
     private String URLadress;
     private String studentEmail;
     private Boolean submitted;
     private String grade;
 
-    public Assigment(String URLadress) {
+    public Assigment(String title, String URLadress) {
+        this.title = title;
         this.URLadress = URLadress;
         this.studentEmail = null;
         this.submitted = null;
+        this.grade = null;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getURLadress() {
@@ -36,6 +47,11 @@ public class Assigment{
         this.submitted = submitted;
     }
 
+    public String getGrade() {
+        return this.grade;
+    }
 
-    
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
 }

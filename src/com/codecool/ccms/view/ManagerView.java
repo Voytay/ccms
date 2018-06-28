@@ -1,17 +1,12 @@
-package com.codecool.ccms.views;
+package com.codecool.ccms.view;
 
-import com.codecool.ccms.models.*;
+import com.codecool.ccms.model.*;
 import java.util.*;
 
-public class ManagerView {
-
-    private Scanner read;
-    private String input1;
-    private String input2;
-    private String input3;
+public class ManagerView extends View {
 
     public ManagerView() {
-        this.read = new Scanner(System.in);
+        super();
     }
 
     public void getMentorData() {
@@ -24,42 +19,6 @@ public class ManagerView {
         this.input3 = read.nextLine();
     }
 
-    public String getInput1() {
-        return this.input1;
-    }
-
-    public String getInput2() {
-        return this.input2;
-    }
-
-    public String getInput3() {
-        return this.input3;
-    }
-
-    public void printMessage(String message) {
-        System.out.println(message);
-    }
-
-    public void printNoResult() {
-        System.out.println("No matching results found.");
-    }
-
-    public void printUserData(User user) {
-        System.out.println("Name: " + user.getName());
-        System.out.println("Email: " + user.getEmail());
-        System.out.println("\n");
-    }
-
-    public void getData(String message) {
-        clearInput();
-        printMessage(message);
-        this.input1 = read.nextLine();
-    }
-
-    private void clearInput() {
-        this.input1 = "";
-        this.input2 = "";
-        this.input3 = "";
-    }
+    
 
 }

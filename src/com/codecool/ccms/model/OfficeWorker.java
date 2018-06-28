@@ -1,4 +1,4 @@
-package com.codecool.ccms.models;
+package com.codecool.ccms.model;
 
 public class OfficeWorker extends User {
 
