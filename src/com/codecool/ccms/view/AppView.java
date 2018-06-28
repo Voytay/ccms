@@ -31,7 +31,6 @@ public class AppView {
             } catch (InputMismatchException e) {
                 System.out.println("It's not a number!");
             }
-
         return i;
     }
 
