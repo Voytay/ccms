@@ -12,7 +12,7 @@ public class AppController {
     public void run(){
         menu.add("Login");
         menu.add("Exit");
-        APP_VIEW.printData(menu);
+        APP_VIEW.printMenu(menu);
         int decision = APP_VIEW.getUserInput();
 
         switch(decision){

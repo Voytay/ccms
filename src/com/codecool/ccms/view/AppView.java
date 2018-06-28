@@ -1,20 +1,9 @@
 package com.codecool.ccms.view;
 
-
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class AppView {
-
-    public static void printData(ArrayList<String> data) {
-        int i = 1;
-        System.out.println("Choose option: ");
-        for (String s : data) {
-            System.out.println(i + "." + s);
-            i++;
-        }
-    }
+public class AppView extends View{
 
     public static String getUserInput(String message) {
         Scanner sc = new Scanner(System.in);

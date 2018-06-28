@@ -51,5 +51,24 @@ abstract public class View {
         this.input2 = "";
         this.input3 = "";
     }
+
+    public void printMenu(ArrayList<String> data) {
+        int i = 1;
+        System.out.println("Choose option: ");
+        for (String s : data) {
+            System.out.println(i + "." + s);
+            i++;
+        }
+    }
+    public int getUserInputInt() {
+        int i = 0;
+        Scanner sc = new Scanner(System.in);
+        try {
+            i = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("It's not a number!");
+        }
+        return i;
+    }
 }
 

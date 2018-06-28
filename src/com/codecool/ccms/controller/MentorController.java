@@ -8,35 +8,34 @@ import java.util.*;
 public class MentorController {
 
     private Mentor mentor;
-    private MentorView view;
+    private static final MentorView MENTOR_VIEW = new MentorView();
 
     private List<Assigment> templateAssigments;
     private List<Assigment> assigmentsFromStudents;
 
     public MentorController(Mentor mentor) {
         this.mentor = mentor;
-        this.view = new MentorView();
         this.templateAssigments = new ArrayList<>();
         this.assigmentsFromStudents = new ArrayList<>();
     }
 
     private void addAssigment() {
-        this.view.getAssigmentData();
-        this.templateAssigments.add(new Assigment(view.getInput1(), view.getInput2()));
+        this.MENTOR_VIEW.getAssigmentData();
+        this.templateAssigments.add(new Assigment(MENTOR_VIEW.getInput1(), MENTOR_VIEW.getInput2()));
     }
 
     private void gradeAssigment(String email, String URLadress) {
         Assigment assigment = findAssigment(email, URLadress);
         if (assigment.equals(null)) {
-            this.view.printMessage("No such assigment is available to grade.");
+            this.MENTOR_VIEW.printMessage("No such assigment is available to grade.");
         } else {
-            this.view.getData("Insert grade:");
-            assigment.setGrade(view.getInput1());
+            this.MENTOR_VIEW.getData("Insert grade:");
+            assigment.setGrade(MENTOR_VIEW.getInput1());
         }
     }
 
     private Assigment findAssigment(String email, String URLadress) {
-        for (Assigment assigment: assigmentsFromStudents) {
+        for (Assigment assigment : assigmentsFromStudents) {
             if (assigment.getStudentEmail().equals(email) && assigment.getURLadress().equals(URLadress)) {
                 return assigment;
             }
@@ -48,6 +47,8 @@ public class MentorController {
 
     }
 
-    private Student findStudent() {}
+    //private Student findStudent() {}
+    public void run() {
+    }
 
 }

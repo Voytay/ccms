@@ -1,20 +1,23 @@
 package com.codecool.ccms.controller;
 
-import com.codecool.ccms.view.StudentView;
+import com.codecool.ccms.model.Student;
+import com.codecool.ccms.view.*;
 
 import java.util.ArrayList;
 
-public class StudentController {
+public class StudentController extends View {
     private static final StudentView STUDENT_VIEW = new StudentView();
     private ArrayList<String> menu = new ArrayList<>();
+    private Student student;
 
-    public StudentController() {
+    public StudentController(Student student) {
+        this.student = student;
         menu.add("Submit assigment");
         menu.add("Show grades");
         menu.add("Exit");
     }
 
-    private void printMenu(ArrayList<String> data) {
+    private void printMenuOptions(ArrayList<String> data) {
         STUDENT_VIEW.printOptions(data);
     }
 
@@ -29,7 +32,7 @@ public class StudentController {
 
         int decision = 0;
         while (decision < 1 || decision > 3) {
-            printMenu(menu);
+            printMenuOptions(menu);
             decision = STUDENT_VIEW.getUserInput();
             switch (decision) {
                 case 1:
