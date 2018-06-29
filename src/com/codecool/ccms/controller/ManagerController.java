@@ -8,8 +8,8 @@ import java.util.*;
 public class ManagerController {
     private static final ManagerView MANAGER_VIEW = new ManagerView();
 
-    private List<User> mentorsList;
-    private List<User> studentsList;
+    private List<Mentor> mentorsList;
+    private List<Student> studentsList;
 
     private Manager manager;
 
@@ -20,16 +20,16 @@ public class ManagerController {
         this.studentsList = new ArrayList<>();
     }
 
-    public void setMentorsList(List<User> mentorsList) {
+    public void setMentorsList(List<Mentor> mentorsList) {
         this.mentorsList = mentorsList;
     }
 
-    public void setStudentsList(List<User> studentsList) {
+    public void setStudentsList(List<Student> studentsList) {
         this.studentsList = studentsList;
     }
 
     private User findMentor(String email) {
-        for (User mentor: this.mentorsList) {
+        for (Mentor mentor: this.mentorsList) {
             if ( mentor.getEmail().equals(email)) {
                 return mentor;
             }

@@ -46,8 +46,12 @@ public class LoginController {
                         mc.run();
                         break;
                     case 3:
-                        System.out.println("OK");
-                        ManagerController manC = new ManagerController(new Manager("Jurek", "jurek@cms.codecool"));
+                        System.out.println(splitedLine[0] + " " + splitedLine[1]);
+                        ManagerController manC = new ManagerController(new Manager(splitedLine[0], splitedLine[1]));
+                        manC.setStudentsList(parser.getStudentsList());
+                        System.out.println("Controller created");
+                        manC.setMentorsList(parser.getMentorsList());
+                        System.out.println("List set");
                         manC.run();
                         break;
                     default:
