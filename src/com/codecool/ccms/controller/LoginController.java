@@ -1,6 +1,6 @@
 package com.codecool.ccms.controller;
 
-import com.codecool.ccms.DataBase;
+import com.codecool.ccms.*;
 import com.codecool.ccms.model.Manager;
 import com.codecool.ccms.model.Mentor;
 import com.codecool.ccms.model.Status;
@@ -29,6 +29,7 @@ public class LoginController {
             String[] splitedLine = line.split(",");
             if (splitedLine[1].equals(data.get(0)) && splitedLine[2].equals(data.get(1))) {
                  userType = Integer.valueOf(splitedLine[3]);
+                Parser parser = new Parser();
                 switch (userType) {
                     case 0:
                        // StudentController sc = new StudentController(new Student(line.get(0), line.get(1)));
@@ -39,7 +40,9 @@ public class LoginController {
                         sc.run();
                         break;
                     case 2:
-                        MentorController mc = new MentorController(new Mentor("Mentor1", "mentor@codecool"));
+                        Mentor mentor = new Mentor(splitedLine[0], splitedLine[1]);
+                        MentorController mc = new MentorController(mentor);
+                        mc.setStudentsList(parser.getStudentsList());
                         mc.run();
                         break;
                     case 3:

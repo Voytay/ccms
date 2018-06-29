@@ -12,11 +12,13 @@ public class MentorController {
 
     private List<Assigment> templateAssigments;
     private List<Assigment> assigmentsFromStudents;
+    private List<Student> studentsList;
 
     public MentorController(Mentor mentor) {
         this.mentor = mentor;
         this.templateAssigments = new ArrayList<>();
         this.assigmentsFromStudents = new ArrayList<>();
+        this.studentsList = new ArrayList<>();
     }
 
     private void addAssigment() {
@@ -51,5 +53,9 @@ public class MentorController {
     public void run() {
     }
     private void findStudent() {}
+
+    public void setStudentsList(List<Student> studentsList) {
+        this.studentsList = studentsList;
+    }
 
 }
