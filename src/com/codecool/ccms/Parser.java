@@ -29,4 +29,14 @@ public class Parser {
         }
         return data;
     }
+
+    public List<Student> getMentorsList() {
+        List<String> data = base.readDataFromFile("ccmsdata.csv");
+        for (String line: base) {
+            String arr[] = line.split(",");
+            if (arr[statusPosition] == Status.STAT_2.getStatus()) {
+                data.add(new Mentor(arr[namePosition], arr[emailPosition]));
+        }
+        return data;
+    }
 }
