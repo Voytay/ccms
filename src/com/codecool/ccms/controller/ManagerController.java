@@ -48,7 +48,7 @@ public class ManagerController {
         // remove mentor from database, reload
     }
 
-    private void eidtMentorsData() {
+    private void editMentorsData() {
         this.MANAGER_VIEW.getData("Insert mentors email:");
         Mentor mentor = (Mentor) findMentor(MANAGER_VIEW.getInput1());
         if (mentor.equals(null)) {
@@ -86,5 +86,6 @@ public class ManagerController {
                 this.MANAGER_VIEW.printUserData(mentor);
             }
         }
-    }         
+    }
+    public void run(){}
 }

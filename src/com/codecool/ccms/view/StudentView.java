@@ -8,7 +8,7 @@ public class StudentView extends AppView {
     public StudentView(){}
 
     public void printOptions(ArrayList<String> data){
-        printData(data);
+        printMenu(data);
     }
 
 }

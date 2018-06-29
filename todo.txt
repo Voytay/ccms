@@ -1,0 +1,6 @@
+parser do danych
+controllery, metody run --> manager controller, mentor controller, 
+student:
+	grades()
+	+assigments list
+
